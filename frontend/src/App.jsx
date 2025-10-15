@@ -15,7 +15,7 @@ import JoinGroup from './pages/home/JoinGroup';
 import Dashboard from './pages/Superuser/Dashboard';
 import PublicGroups from './pages/Superuser/PublicGroups';
 import Balances from './pages/Superuser/Balances';
-import ManageGroup from './pages/Superuser/ManageGroup'; // ✅ New page
+import ManageGroup from './pages/Superuser/ManageGroup';
 
 import DashboardLayout from './components/DashboardLayout';
 import SuperuserLayout from './components/SuperuserLayout';

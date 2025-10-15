@@ -1,4 +1,3 @@
-// src/components/Spinner.jsx
 export default function Spinner({ size = 40, color = 'primary' }) {
   const colorClass =
     color === 'primary'

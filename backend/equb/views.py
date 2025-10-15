@@ -27,7 +27,7 @@ from decimal import Decimal
 
 
 from .models import EqubGroup, Membership, Contribution, Payout, Account, JoinRequest
-from .serializers import (UserSerializer, RegisterSerializer,
+from .serializers import (UserSerializer ,RegisterSerializer,
                           EqubGroupSerializer, MembershipSerializer,
                           ContributionSerializer, PayoutSerializer,GroupDetailSerializer, AccountSerializer, JoinRequestSerializer)
 from .permissions import IsGroupCreatorOrReadOnly

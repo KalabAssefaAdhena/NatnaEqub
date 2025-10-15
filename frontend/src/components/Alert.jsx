@@ -1,4 +1,3 @@
-// src/components/Alert.jsx
 import React from 'react';
 
 export default function Alert({ type = 'info', message, onClose }) {

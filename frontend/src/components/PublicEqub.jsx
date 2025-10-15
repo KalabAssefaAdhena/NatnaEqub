@@ -1,4 +1,3 @@
-// src/pages/PublicEqubs.jsx
 import { useEffect, useState } from 'react';
 import api from '../api/axios';
 import EqubGroupCard from '../components/EqubGroupCard';
@@ -40,7 +39,6 @@ export default function PublicEqubs() {
       });
       setMessage(res.data.detail || 'Join request sent');
 
-      // Refresh requests
       const myReqsRes = await api.get('/join-requests/my_requests/');
       setMyRequests(myReqsRes.data || []);
     } catch (err) {
@@ -76,7 +74,7 @@ export default function PublicEqubs() {
             joined={isMember(group.id)}
             request={getRequestForGroup(group.id)}
             onJoin={handleJoin}
-            clickable={isMember(group.id)} // only clickable if joined
+            clickable={isMember(group.id)}
           />
         ))
       )}

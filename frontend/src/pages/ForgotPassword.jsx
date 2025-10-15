@@ -5,12 +5,12 @@ import Button from '../components/Button';
 import Input from '../components/Input';
 import Card from '../components/Card';
 import Spinner from '../components/Spinner';
-import Alert from '../components/Alert'; // import Alert
+import Alert from '../components/Alert';
 
 export default function ForgotPassword() {
   const [username, setUsername] = useState('');
   const [message, setMessage] = useState('');
-  const [messageType, setMessageType] = useState('success'); // info, success, error
+  const [messageType, setMessageType] = useState('success');
   const [loading, setLoading] = useState(false);
 
   const handleSendVerification = async () => {

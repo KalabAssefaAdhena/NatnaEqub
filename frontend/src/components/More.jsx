@@ -1,4 +1,3 @@
-// src/pages/More.jsx
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import api from '../api/axios';
@@ -14,12 +13,10 @@ export default function More() {
         const res = await api.get('/dashboard/');
         const userData = res.data.user;
 
-        // Groups created by this user
         const createdEqubs = res.data.groups.filter(
           (g) => g.created_by?.id === userData.id
         ).length;
 
-        // Groups user joined but not created by them
         const joinedEqubs = res.data.memberships.filter(
           (m) =>
             m.group?.created_by?.id !== undefined &&

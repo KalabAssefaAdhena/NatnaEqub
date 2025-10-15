@@ -1,4 +1,3 @@
-// src/components/DashboardLayout.jsx
 import { useState, useEffect } from 'react';
 import api from '../api/axios';
 import { Outlet, NavLink } from 'react-router-dom';
@@ -9,7 +8,6 @@ export default function DashboardLayout() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // Fetch dashboard data
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);

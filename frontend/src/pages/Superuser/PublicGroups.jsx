@@ -9,7 +9,7 @@ import GroupsList from '../../components/GroupsList';
 export default function PublicGroups() {
   const [groups, setGroups] = useState([]);
   const [loading, setLoading] = useState(true);
-  const navigate = useNavigate(); // ✅ useNavigate hook
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchGroups();
@@ -26,7 +26,6 @@ export default function PublicGroups() {
     setLoading(false);
   };
 
-  // Navigate to the new ManageGroup page
   const openManage = (id) => {
     navigate(`/superuser/manage-group/${id}`);
   };

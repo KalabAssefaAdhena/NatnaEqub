@@ -8,7 +8,7 @@ import Button from '../components/Button';
 export default function VerifyEmail() {
   const { token } = useParams();
   const navigate = useNavigate();
-  const [status, setStatus] = useState('loading'); // 'loading', 'success', 'info', 'error'
+  const [status, setStatus] = useState('loading');
   const [message, setMessage] = useState('');
 
   useEffect(() => {

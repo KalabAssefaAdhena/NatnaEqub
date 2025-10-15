@@ -1,4 +1,3 @@
-// src/components/CreateGroupForm.jsx
 import React, { useState } from 'react';
 import api from '../api/axios';
 import Spinner from './Spinner';
@@ -37,7 +36,6 @@ export default function CreateGroupForm({ refreshAll }) {
         cycle_days: Number(form.cycle_days),
       });
 
-      // Reset form after success
       setForm({
         name: '',
         contribution_amount: '',

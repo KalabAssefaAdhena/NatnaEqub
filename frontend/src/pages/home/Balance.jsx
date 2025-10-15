@@ -1,4 +1,3 @@
-// src/pages/Balance.jsx
 import { useState, useEffect } from 'react';
 import api from '../../api/axios';
 import { useOutletContext } from 'react-router-dom';
@@ -37,7 +36,6 @@ export default function Balance() {
       const res = await api.post('/payments/chapa/initiate/', {
         amount: Number(depositAmount),
       });
-      // Redirect to Chapa checkout
       window.location.href = res.data.checkout_url;
     } catch (err) {
       console.error('Deposit failed', err);
@@ -62,18 +60,15 @@ export default function Balance() {
       });
 
       if (res.data?.tx_ref) {
-        // Call the unified webhook
         await api.post('/payments/chapa/webhook/', {
           tx_ref: res.data.tx_ref,
           status: 'success',
         });
 
-        // Fetch the updated withdrawal status
         const withdrawalRes = await api.get(
           `/payments/transaction-status/?tx_ref=${res.data.tx_ref}`
         );
 
-        // Redirect to return page with latest status
         window.location.href = `/payments/return/?tx_ref=${res.data.tx_ref}&status=${withdrawalRes.data.status}`;
       }
     } catch (err) {

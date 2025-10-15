@@ -1,10 +1,8 @@
-# equb/permissions.py
 from rest_framework import permissions
 from .models import Membership
 
 class IsGroupCreatorOrReadOnly(permissions.BasePermission):
     def has_object_permission(self, request, view, obj):
-        # obj is EqubGroup
         if request.method in permissions.SAFE_METHODS:
             return True
         return obj.created_by == request.user
@@ -19,7 +17,6 @@ class IsMemberOfGroup(permissions.BasePermission):
 
 class IsMembershipOwnerOrReadOnly(permissions.BasePermission):
     def has_object_permission(self, request, view, obj):
-        # obj is Membership
         if request.method in permissions.SAFE_METHODS:
             return True
         return obj.user == request.user

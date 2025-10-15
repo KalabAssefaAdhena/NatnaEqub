@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
-import api from '../api/axios'; // adjust if your axios instance path differs
+import api from '../api/axios';
 
 export default function PaymentReturn() {
   const [searchParams] = useSearchParams();

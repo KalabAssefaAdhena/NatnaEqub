@@ -17,9 +17,7 @@ class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
     def validate(self, attrs):
         data = super().validate(attrs)
 
-        # Skip email verification for superusers
         if not self.user.is_superuser:
-            # Check if user's email is verified
             if not getattr(self.user.account, "is_verified", False):
                 raise serializers.ValidationError({
                     "non_field_errors": ["Email not verified."]
@@ -48,7 +46,6 @@ class RegisterSerializer(serializers.ModelSerializer):
         fields = ("id", "username", "email", "first_name", "last_name", "password")
 
     def create(self, validated_data):
-        # 1️⃣ Create the user
         user = User(
             username=validated_data["username"],
             email=validated_data.get("email", ""),
@@ -58,10 +55,8 @@ class RegisterSerializer(serializers.ModelSerializer):
         user.set_password(validated_data["password"])
         user.save()
 
-        # 2️⃣ Generate verification token
         token = user.account.generate_verification_token()
 
-        # 3️⃣ Send verification email
         send_password_reset_email(user)
 
         return user
@@ -75,7 +70,7 @@ class EqubGroupSerializer(serializers.ModelSerializer):
         model = EqubGroup
         fields = (
             "id",
-            "code",              # 🆕 group code like E10001
+            "code",              
             "name",
             "description",
             "created_by",
@@ -84,7 +79,7 @@ class EqubGroupSerializer(serializers.ModelSerializer):
             "cycle_days",
             "members_count",
             "max_members",
-            "service_fee_percentage",     # 🆕 added
+            "service_fee_percentage",     
         )
 
 
@@ -131,7 +126,6 @@ class PayoutSerializer(serializers.ModelSerializer):
         read_only_fields = ("date",)
 
 
-# ✅ Group Detail Serializer (for retrieve view)
 class GroupDetailSerializer(serializers.ModelSerializer):
     memberships = MembershipSerializer(many=True, read_only=True)
     payouts = PayoutSerializer(many=True, read_only=True)
@@ -145,7 +139,7 @@ class GroupDetailSerializer(serializers.ModelSerializer):
         model = EqubGroup
         fields = (
             "id",
-            "code",  # 🆕 include group code here too
+            "code",  
             "name",
             "description",
             "created_by",
@@ -196,7 +190,6 @@ class GroupDetailSerializer(serializers.ModelSerializer):
         return None
 
 
-# ✅ Join Request Serializer
 class JoinRequestSerializer(serializers.ModelSerializer):
     user = UserSerializer(read_only=True)
     group = EqubGroupSerializer(read_only=True)

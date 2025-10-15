@@ -4,7 +4,7 @@ import api from '../api/axios';
 import Input from '../components/Input';
 import Button from '../components/Button';
 import Card from '../components/Card';
-import Alert from '../components/Alert'; // import Alert
+import Alert from '../components/Alert';
 
 export default function ResetPassword() {
   const { uid, token } = useParams();

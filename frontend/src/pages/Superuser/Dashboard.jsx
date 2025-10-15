@@ -30,14 +30,13 @@ export default function Dashboard() {
         api.get('/superuser/public-groups/summary/'),
         api.get('/superuser/public-groups/'),
         api.get('/account/all_accounts/'),
-        api.get('/superuser/balance/'), // <-- new call
+        api.get('/superuser/balance/'),
       ]);
 
       setSummary(sum.data);
       setGroups(grp.data);
       setBalances(bal.data);
 
-      // Use dedicated superuser endpoint
       setSuperuserBalance(Number(suBalRes.data.balance || 0));
     } catch (err) {
       console.error(err);

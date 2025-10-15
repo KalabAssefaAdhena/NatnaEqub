@@ -56,7 +56,7 @@ export default function EqubGroupCard({
           <p>{group.cycle_days}</p>
         </div>
 
-        {/* 🟢 Service Fee */}
+        {/*  Service Fee */}
         <div className="flex flex-col items-center">
           <p className="font-semibold">Service Fee</p>
           <p>{group.service_fee_percentage}%</p>

@@ -7,7 +7,6 @@ export default function WheelModal({
   onClose,
   onFinished,
 }) {
-  // stable data reference unless usernames change
   const data = useMemo(() => {
     if (!members) return [];
     return members.map((m) => ({ option: m.user.username }));
@@ -21,7 +20,6 @@ export default function WheelModal({
   useEffect(() => {
     if (!winnerUsername || data.length === 0) return;
 
-    // only spin if the winner changed and we're not already spinning
     if (winnerUsername !== lastWinnerRef.current && !spinningRef.current) {
       const idx = data.findIndex((d) => d.option === winnerUsername);
       if (idx === -1) return;

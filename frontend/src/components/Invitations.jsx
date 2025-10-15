@@ -6,7 +6,7 @@ import Spinner from './Spinner';
 import Alert from './Alert';
 
 export default function Invitations() {
-  const [subTab, setSubTab] = useState('received'); // 'received' or 'sent'
+  const [subTab, setSubTab] = useState('received');
   const [mainSubTab, setMainSubTab] = useState('receivedInvites');
   const [alert, setAlert] = useState(null);
   const [invitations, setInvitations] = useState({
@@ -49,10 +49,9 @@ export default function Invitations() {
     fetchData();
   }, []);
 
-  // Helper to show alert
   const showAlert = (type, message) => {
     setAlert({ type, message });
-    setTimeout(() => setAlert(null), 3000); // hide after 3s
+    setTimeout(() => setAlert(null), 3000);
   };
 
   const handleInvite = async () => {

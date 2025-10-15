@@ -20,7 +20,6 @@ class PaymentListAPIView(generics.ListAPIView):
     queryset = Payment.objects.all().order_by("-created_at")
     serializer_class = PaymentSerializer
 
-    # Optional: filter by status via query param ?status=PAID
     def get_queryset(self):
         qs = super().get_queryset()
         status = self.request.query_params.get("status")
@@ -29,19 +28,17 @@ class PaymentListAPIView(generics.ListAPIView):
         return qs
 
 class ChapaInitiate(APIView):
-    permission_classes = [IsAuthenticated]  # only logged-in users can deposit
+    permission_classes = [IsAuthenticated]  
 
     def post(self, request):
         data = request.data
         tx_ref = f"EQB-{uuid4().hex[:10]}"
 
-        # Get user info from the request.user
         user = request.user
         first_name = user.first_name or "Unknown"
         last_name = user.last_name or "User"
         email = user.email
 
-        # Create Payment entry with PENDING status
         payment = Payment.objects.create(
             tx_ref=tx_ref,
             user_email=email,
@@ -51,7 +48,6 @@ class ChapaInitiate(APIView):
             status="PENDING"
         )
 
-        # Initialize Chapa payment
         result = initialize_payment(
             email=email,
             amount=payment.amount,
@@ -76,7 +72,6 @@ def payment_return(request):
     tx_ref = request.GET.get("trx_ref") or request.GET.get("tx_ref")
     status = request.GET.get("status")
 
-    # Redirect to React frontend
     frontend_return_url = f"{settings.FRONTEND_URL}/payments/return?tx_ref={tx_ref}&status={status or ''}"
     return redirect(frontend_return_url)
 
@@ -108,19 +103,16 @@ class ChapaWithdrawInitiate(APIView):
         user = request.user
         data = request.data
 
-        # Validate required fields
         required_fields = ["account_number", "bank_code", "amount"]
         for field in required_fields:
             if not data.get(field):
                 return Response({"error": f"{field} is required"}, status=400)
 
-        # Get user's account
         try:
             user_account = user.account
         except Account.DoesNotExist:
             return Response({"error": "User account not found"}, status=404)
 
-        # Check balance
         try:
             amount = Decimal(data["amount"])
         except:
@@ -131,7 +123,6 @@ class ChapaWithdrawInitiate(APIView):
 
         tx_ref = f"WDL-{uuid4().hex[:10]}"
 
-        # Save withdrawal in DB
         withdrawal = Withdrawal.objects.create(
             tx_ref=tx_ref,
             user_email=user.email,
@@ -143,7 +134,6 @@ class ChapaWithdrawInitiate(APIView):
             bank_code=data["bank_code"],
         )
 
-        # Initialize transfer (to Chapa)
         result = initialize_withdrawal(
             account_name=f"{withdrawal.first_name} {withdrawal.last_name}",
             account_number=withdrawal.account_number,
@@ -191,7 +181,7 @@ class ChapaUnifiedWebhook(APIView):
     permission_classes = [AllowAny]
 
     def post(self, request):
-        # Optional: verify webhook signature
+        #verify webhook signature
         #signature = request.headers.get("Chapa-Signature")
         #if signature != settings.CHAPA_SECRET_HASH:
         #    return Response({"error": "Unauthorized"}, status=401)
@@ -210,12 +200,10 @@ class ChapaUnifiedWebhook(APIView):
 
         try:
             with transaction.atomic():
-                # Handle Payments (Deposits)
                 payment = Payment.objects.select_for_update().filter(tx_ref=tx_ref).first()
                 if payment:
                     if status == "success" and payment.status != "PAID":
                         payment.status = "PAID"
-                        # Get user account
                         user = User.objects.get(email=payment.user_email)
                         user_account, _ = Account.objects.get_or_create(user=user)
                         user_account.balance += payment.amount
@@ -225,7 +213,6 @@ class ChapaUnifiedWebhook(APIView):
                     payment.save()
                     return Response({"message": "Payment webhook processed"}, status=200)
 
-                # Handle Withdrawals (Payouts)
                 withdrawal = Withdrawal.objects.select_for_update().filter(tx_ref=tx_ref).first()
 
                 if withdrawal:
@@ -240,7 +227,6 @@ class ChapaUnifiedWebhook(APIView):
                     withdrawal.save()
                     return Response({"message": "Withdrawal webhook processed"}, status=200)
 
-                # If no transaction found
                 return Response({"error": "Transaction not found"}, status=404)
 
         except User.DoesNotExist:

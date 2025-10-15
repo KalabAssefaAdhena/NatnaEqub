@@ -83,14 +83,12 @@ export default function Login() {
             {loading ? <Spinner size={20} /> : 'Login'}
           </Button>
 
-          {/* Display login error */}
           {message && (
             <p className="mt-4 text-center font-medium text-red-600">
               {message}
             </p>
           )}
 
-          {/* Forgot Password Link */}
           <p className="mt-2 text-sm text-gray-600">
             <Link
               className="text-[var(--color-primary)] font-medium"

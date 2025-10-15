@@ -19,7 +19,6 @@ def initialize_payment(email, amount, first_name, last_name, tx_ref, custom_data
     }
 
 
-    # Dynamically append tx_ref to return_url
     return_url_with_tx = f"{CHAPA_CALLBACK_URL}?trx_ref={tx_ref}"
 
     payload = {
@@ -52,8 +51,8 @@ def initialize_withdrawal(account_name, account_number, bank_code, amount, refer
 
     payload = {
         "account_name": account_name,
-        "account_number": str(account_number),  # must be numeric string
-        "bank_code": str(bank_code),           # must be numeric string
+        "account_number": str(account_number),  
+        "bank_code": str(bank_code),           
         "amount": str(amount),
         "currency": "ETB",
         "reference": reference or f"WDL-{uuid4().hex[:10]}",

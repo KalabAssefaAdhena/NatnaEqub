@@ -4,7 +4,7 @@ import api from '../../api/axios';
 import Spinner from '../../components/Spinner';
 
 export default function ManageGroup() {
-  const { id: groupId } = useParams(); // ✅ get groupId from URL
+  const { id: groupId } = useParams();
   const navigate = useNavigate();
   const [group, setGroup] = useState(null);
   const [joinRequests, setJoinRequests] = useState([]);
@@ -33,7 +33,6 @@ export default function ManageGroup() {
   const fetchJoinRequests = async () => {
     try {
       const res = await api.get('/join-requests/requests_to_my_groups/');
-      // Ensure group id comparison works regardless of string/number
       const gid = Number(groupId);
       const filtered = (res.data || []).filter(
         (r) => Number(r.group?.id) === gid
@@ -47,7 +46,6 @@ export default function ManageGroup() {
   const handleApproveDecline = async (reqId, actionType) => {
     try {
       await api.patch(`/join-requests/${reqId}/${actionType}/`);
-      // Re-fetch to get authoritative state
       await fetchJoinRequests();
       await fetchDetails();
     } catch (err) {

@@ -1,10 +1,9 @@
-// src/pages/JoinGroup.jsx
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../../api/axios';
-import Input from '../../components/Input'; // ✅ use your styled Input
-import Button from '../../components/Button'; // ✅ use your styled Button
-import Card from '../../components/Card'; // optional, for layout consistency
+import Input from '../../components/Input';
+import Button from '../../components/Button';
+import Card from '../../components/Card';
 
 export default function JoinGroup() {
   const [groupCode, setGroupCode] = useState('');
@@ -26,7 +25,6 @@ export default function JoinGroup() {
       setMessage(`Join request sent successfully for group ${groupCode}`);
       setGroupCode('');
 
-      // Refresh requests after successful join
       const myReqsRes = await api.get('/join-requests/my_requests/');
       setMyRequests([...myReqsRes.data].reverse() || []);
     } catch (err) {
@@ -35,7 +33,6 @@ export default function JoinGroup() {
     }
   };
 
-  // Load user's current join requests
   useEffect(() => {
     const fetchRequests = async () => {
       try {
