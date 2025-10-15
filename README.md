@@ -1,7 +1,7 @@
 # Natna Equb 🌞
 
-Natna Equb is a **digital savings platform** that automates group fund rotations.  
-It is built with **React frontend**, **Django REST backend**, and **Chapa payment integration**, helping Ethiopian communities save securely and efficiently.
+Natna Equb is a **digital savings platform** that modernizes and automates the **traditional Ethiopian Equb system of group fund rotation**.
+It is built with a React frontend, Django REST backend, and Chapa payment integration, enabling secure and efficient group savings in a digital form.
 
 ---
 
