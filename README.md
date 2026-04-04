@@ -137,70 +137,16 @@ SOFTWARE.
 ```
 
 ```
-
 ## 📸 Screenshots
-
 ### 🏗️ Project Progress
+### Phase 1: Setup & Authentication
 
-#### Phase 1: Setup & Authentication
+<p align="center"> <img src="screenshots/1.jpg" width="250" /> <img src="screenshots/2.jpg" width="250" /> <img src="screenshots/3.jpg" width="250" /> <img src="screenshots/4.jpg" width="250" /> <img src="screenshots/5.jpg" width="250" /> <img src="screenshots/6.jpg" width="250" /> <img src="screenshots/7.jpg" width="250" /> <img src="screenshots/8.jpg" width="250" /> <img src="screenshots/9.jpg" width="250" /> <img src="screenshots/10.jpg" width="250" /> <img src="screenshots/11.jpg" width="250" /> <img src="screenshots/12.jpg" width="250" /> </p>
 
-![Step 1](screenshots/1.jpg)
-![Step 2](screenshots/2.jpg)
-![Step 3](screenshots/3.jpg)
-![Step 4](screenshots/4.jpg)
-![Step 5](screenshots/5.jpg)
-![Step 6](screenshots/6.jpg)
-![Step 7](screenshots/7.jpg)
-![Step 8](screenshots/8.jpg)
-![Step 9](screenshots/9.jpg)
-![Step 10](screenshots/10.jpg)
-![Step 11](screenshots/11.jpg)
-![Step 12](screenshots/12.jpg)
+### Phase 2: Dashboard & UI
 
----
+<p align="center"> <img src="screenshots/13.jpg" width="250" /> <img src="screenshots/14.jpg" width="250" /> <img src="screenshots/15.jpg" width="250" /> <img src="screenshots/16.jpg" width="250" /> <img src="screenshots/17.jpg" width="250" /> <img src="screenshots/18.jpg" width="250" /> <img src="screenshots/19.jpg" width="250" /> <img src="screenshots/20.jpg" width="250" /> <img src="screenshots/21.jpg" width="250" /> <img src="screenshots/22.jpg" width="250" /> <img src="screenshots/23.jpg" width="250" /> <img src="screenshots/24.jpg" width="250" /> <img src="screenshots/25.jpg" width="250" /> <img src="screenshots/26.jpg" width="250" /> <img src="screenshots/27.jpg" width="250" /> <img src="screenshots/28.jpg" width="250" /> <img src="screenshots/29.jpg" width="250" /> <img src="screenshots/30.jpg" width="250" /> <img src="screenshots/31.jpg" width="250" /> <img src="screenshots/32.jpg" width="250" /> <img src="screenshots/33.jpg" width="250" /> <img src="screenshots/34.jpg" width="250" /> <img src="screenshots/35.jpg" width="250" /> <img src="screenshots/36.jpg" width="250" /> <img src="screenshots/37.jpg" width="250" /> </p>
 
-#### Phase 2: Dashboard & UI
+### Phase 3: Payments & Rotation
 
-![Step 13](screenshots/13.jpg)
-![Step 14](screenshots/14.jpg)
-![Step 15](screenshots/15.jpg)
-![Step 16](screenshots/16.jpg)
-![Step 17](screenshots/17.jpg)
-![Step 18](screenshots/18.jpg)
-![Step 19](screenshots/19.jpg)
-![Step 20](screenshots/20.jpg)
-![Step 21](screenshots/21.jpg)
-![Step 22](screenshots/22.jpg)
-![Step 23](screenshots/23.jpg)
-![Step 24](screenshots/24.jpg)
-![Step 25](screenshots/25.jpg)
-![Step 26](screenshots/26.jpg)
-![Step 27](screenshots/27.jpg)
-![Step 28](screenshots/28.jpg)
-![Step 29](screenshots/29.jpg)
-![Step 30](screenshots/30.jpg)
-![Step 31](screenshots/31.jpg)
-![Step 32](screenshots/32.jpg)
-![Step 33](screenshots/33.jpg)
-![Step 34](screenshots/34.jpg)
-![Step 35](screenshots/35.jpg)
-![Step 36](screenshots/36.jpg)
-![Step 37](screenshots/37.jpg)
-
----
-
-#### Phase 3: Payments & Rotation
-
-![Step 38](screenshots/38.jpg)
-![Step 39](screenshots/39.jpg)
-![Step 40](screenshots/40.jpg)
-![Step 41](screenshots/41.jpg)
-![Step 42](screenshots/42.jpg)
-![Step 43](screenshots/43.jpg)
-![Step 44](screenshots/44.jpg)
-![Step 45](screenshots/45.jpg)
-![Step 46](screenshots/46.jpg)
-![Step 47](screenshots/47.jpg)
-![Step 48](screenshots/48.jpg)
-![Step 49](screenshots/49.jpg)
-![Step 50](screenshots/50.jpg)
+<p align="center"> <img src="screenshots/38.jpg" width="250" /> <img src="screenshots/39.jpg" width="250" /> <img src="screenshots/40.jpg" width="250" /> <img src="screenshots/41.jpg" width="250" /> <img src="screenshots/42.jpg" width="250" /> <img src="screenshots/43.jpg" width="250" /> <img src="screenshots/44.jpg" width="250" /> <img src="screenshots/45.jpg" width="250" /> <img src="screenshots/46.jpg" width="250" /> <img src="screenshots/47.jpg" width="250" /> <img src="screenshots/48.jpg" width="250" /> <img src="screenshots/49.jpg" width="250" /> <img src="screenshots/50.jpg" width="250" /> </p>
