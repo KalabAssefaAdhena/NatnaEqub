@@ -36,9 +36,6 @@ NatnaEqub/
 - Node.js 18+ / npm 9+
 - Django 4+
 - React 18+
-- Chapa account (for payment integration)
-
-> ⚠️ Do NOT use `.env` from GitHub; use `.env.example` to create your own `.env`.
 
 ---
 
@@ -80,19 +77,12 @@ EMAIL_PORT=587
 EMAIL_USE_TLS=True
 EMAIL_HOST_USER=your_email@gmail.com
 EMAIL_HOST_PASSWORD=your_app_password
-CHAPA_PUBLIC_KEY=your_chapa_public_key_here
-CHAPA_SECRET_KEY=your_chapa_secret_key_here
-CHAPA_WEBHOOK_URL=https://your-backend-domain/api/payments/chapa/webhook/
-CHAPA_CALLBACK_URL=https://your-backend-domain/api/payments/return/
-CHAPA_SECRET_HASH=your_chapa_secret_hash_here
+
 
 
 ## Frontend (frontend/.env)
 
 Copy .env.example and fill with real keys:
-
-VITE_CHAPA_PUBLIC_KEY=your_chapa_public_key_here
-VITE_BACKEND_URL=http://localhost:8000
 
 
 ## Usage
