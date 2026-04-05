@@ -1,106 +1,103 @@
-# Natna Equb 🌞
+# 🌞 Natna Equb
 
-Natna Equb is a **digital savings platform** that modernizes and automates the **traditional Ethiopian Equb system of group fund rotation**.
-It is built with a React frontend, Django REST backend, and Chapa payment integration, enabling secure and efficient group savings in a digital form.
-
----
-
-## Features
-
-- Create private Equb groups (any user).
-- Create public Equb groups (**only superuser / admin** via Django `createsuperuser`).
-- Randomized rotations and digital payouts.
-- Group creator manages contributions and service fees.
-- Track payments and payouts.
-- Mobile-friendly and simple dashboard.
+A full-stack **digital Equb platform** built with **React, Django REST Framework, and Chapa integration**, designed to modernize the traditional Ethiopian group saving system.
 
 ---
 
-## Project Structure
+## 🚀 Overview
 
-```
+**Natna Equb** reimagines the traditional **Equb system** by bringing it into a digital environment.  
+Instead of manual coordination, paper tracking, and trust-based payouts, the platform introduces **automation, transparency, and secure payments**.
+
+The system allows users to create and join Equb groups, manage contributions, and handle payouts in an organized and efficient way.
+
+---
+
+## ✨ Core Features
+
+### 👤 User Functionality
+- Create private Equb groups  
+- Join existing groups  
+- Track contributions and payouts  
+- View Equb rotation results  
+- Simple and mobile-friendly dashboard  
+
+---
+
+### 🔐 Admin / Superuser Functionality
+- Create public Equb groups (restricted to admin)  
+- Manage system-wide activities  
+- Oversee group operations and payments  
+
+---
+
+### 🔄 Equb System Logic
+- Automated randomized rotation system  
+- Digital tracking of winners and payouts  
+- Structured contribution cycles  
+- Transparent group activity  
+
+---
+
+### 💳 Payment Integration
+- Integrated with Chapa payment gateway  
+- Enables secure digital transactions  
+- Simplifies contribution and payout processes  
+
+---
+
+## 📊 Platform Capabilities
+
+- Real-time tracking of Equb activities  
+- Organized group management system  
+- Clear visibility of financial flow within groups  
+- Reduced manual errors compared to traditional systems  
+
+---
+
+## 🧰 Technologies Used
+
+### Frontend
+- React  
+- JavaScript  
+- CSS  
+
+### Backend
+- Django  
+- Django REST Framework  
+
+### Payments
+- Chapa API  
+
+---
+
+## 🏗️ Project Structure
+
+
 NatnaEqub/
-├── backend/ # Django backend
-│ └── .env.example # Example environment variables
-├── frontend/ # React frontend
-│ └── .env.example # Example environment variables
-├── .gitignore # Files/folders to ignore
+├── backend/ # Django backend (API & business logic)
+├── frontend/ # React frontend (UI & user interaction)
+├── .gitignore
 └── README.md
-```
+
 
 ---
 
-## Requirements
+## 🎯 What This Project Demonstrates
 
-- Python 3.11+
-- Node.js 18+ / npm 9+
-- Django 4+
-- React 18+
+- Building a real-world financial system with practical use cases  
+- Designing RESTful APIs with Django  
+- Creating a responsive React frontend  
+- Integrating third-party payment systems  
+- Translating traditional systems into scalable digital platforms  
 
 ---
 
-## Installation
+## 💡 Concept Inspiration
 
-### 1. Backend Setup
+The project is inspired by the traditional Ethiopian Equb, a community-based saving method where members contribute regularly and receive payouts in rotation.
 
-```bash
-cd backend
-pip install -r requirements.txt      # Install dependencies
-python manage.py migrate              # Apply migrations
-python manage.py createsuperuser      # Optional: create superuser/admin
-python manage.py runserver            # Start backend server
-
-
-### 2. Frontend Setup
-
-cd ../frontend
-npm install                           # Install dependencies
-npm run dev                            # Start frontend server
-
-### 3. Open the App
-
-Backend: http://localhost:8000
-Frontend: http://localhost:5173
-
-### Environment Variables
-## Backend (backend/.env)
-
-
-
-DJANGO_SECRET_KEY=your_django_secret_here
-DEBUG=True
-ALLOWED_HOSTS=localhost,127.0.0.1
-ACCESS_TOKEN_MINUTES=60
-REFRESH_TOKEN_DAYS=7
-EMAIL_HOST=smtp.gmail.com
-EMAIL_PORT=587
-EMAIL_USE_TLS=True
-EMAIL_HOST_USER=your_email@gmail.com
-EMAIL_HOST_PASSWORD=your_app_password
-
-
-
-
-
-
-## Usage
-
-- Login and explore My Equb dashboard.
-- Create or join private groups.
-- Superuser can create public groups.
-- Make contributions and track rotations.
-- View winners and payouts.
-
-## Notes
-
-- Backend and frontend URLs must match your .env configuration.
-- Service fees are charged by the group creator; Natna Equb takes 10% of the service fee.
-- Always keep your .env secret; never commit it to GitHub.
-
-
-```
-
-
+Natna Equb transforms this concept into a modern, scalable, and user-friendly application.
 
 ```
 
@@ -113,7 +110,7 @@ EMAIL_HOST_PASSWORD=your_app_password
 
 ### Phase 2: Dashboard & UI
 
-<p align="center"> <img src="screenshots/13.jpg" width="250" /> <img src="screenshots/14.jpg" width="250" /> <img src="screenshots/15.jpg" width="250" /> <img src="screenshots/16.jpg" width="250" /> <img src="screenshots/17.jpg" width="250" /> <img src="screenshots/18.jpg" width="250" /> <img src="screenshots/19.png" width="250" /> <img src="screenshots/20.png" width="250" /> <img src="screenshots/21.png" width="250" /> <img src="screenshots/22.jpg" width="250" /> <img src="screenshots/23.jpg" width="250" /> <img src="screenshots/24.jpg" width="250" /> <img src="screenshots/25.jpg" width="250" /> <img src="screenshots/26.jpg" width="250" /> <img src="screenshots/27.jpg" width="250" /> <img src="screenshots/28.jpg" width="250" /> <img src="screenshots/29.jpg" width="250" /> <img src="screenshots/30.jpg" width="250" /> <img src="screenshots/31.jpg" width="250" /> <img src="screenshots/32.jpg" width="250" /> <img src="screenshots/33.jpg" width="250" /> <img src="screenshots/34.jpg" width="250" /> <img src="screenshots/35.jpg" width="250" /> <img src="screenshots/36.jpg" width="250" /> <img src="screenshots/37.jpg" width="250" /> </p>
+<p align="center"> <img src="screenshots/13.jpg" width="250" /> <img src="screenshots/14.jpg" width="250" /> <img src="screenshots/15.jpg" width="250" /> <img src="screenshots/16.jpg" width="250" /> <img src="screenshots/17.jpg" width="250" /> <img src="screenshots/18.png" width="250" /> <img src="screenshots/19.png" width="250" /> <img src="screenshots/20.png" width="250" /> <img src="screenshots/21.jpg" width="250" /> <img src="screenshots/22.jpg" width="250" /> <img src="screenshots/23.jpg" width="250" /> <img src="screenshots/24.jpg" width="250" /> <img src="screenshots/25.jpg" width="250" /> <img src="screenshots/26.jpg" width="250" /> <img src="screenshots/27.jpg" width="250" /> <img src="screenshots/28.jpg" width="250" /> <img src="screenshots/29.jpg" width="250" /> <img src="screenshots/30.jpg" width="250" /> <img src="screenshots/31.jpg" width="250" /> <img src="screenshots/32.jpg" width="250" /> <img src="screenshots/33.jpg" width="250" /> <img src="screenshots/34.jpg" width="250" /> <img src="screenshots/35.jpg" width="250" /> <img src="screenshots/36.jpg" width="250" /> <img src="screenshots/37.jpg" width="250" /> </p>
 
 ### Phase 3: Payments & Rotation
 
