@@ -60,7 +60,7 @@ The system allows users to create and join Equb groups, manage contributions, an
 ### Frontend
 - React  
 - JavaScript  
-- Tailwind CSS  
+- Tailwind CSS   
 
 ### Backend
 - Django  
