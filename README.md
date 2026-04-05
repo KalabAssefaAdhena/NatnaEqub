@@ -73,12 +73,13 @@ The system allows users to create and join Equb groups, manage contributions, an
 
 ## 🏗️ Project Structure
 
-
+```
 NatnaEqub/
 ├── backend/ # Django backend (API & business logic)
 ├── frontend/ # React frontend (UI & user interaction)
 ├── .gitignore
 └── README.md
+```
 
 
 ---
